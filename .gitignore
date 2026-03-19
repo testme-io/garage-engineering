@@ -19,3 +19,5 @@ Thumbs.db
 # Project Specific
 cyrillic_results.log
 assets/templates/
+
+utils/
