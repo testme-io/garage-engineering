@@ -1,0 +1,30 @@
+[project]
+name = "eco-hybrid-lab"
+version = "0.1.0"
+description = "Ephemeral Observability Lab for fast RCA"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "faker>=40.8.0",
+    "marimo>=0.20.4",
+    "duckdb>=1.1.0",
+    "pandas>=2.2.0",
+    "plotly>=5.20.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["F401"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
