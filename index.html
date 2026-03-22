@@ -1,95 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark-theme" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco-Hybrid-Lab / Engineering Handbook</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
 
-    <script>
-        // Принудительная темная тема по умолчанию [cite: 2026-03-11]
-        const theme = localStorage.getItem('theme') || 'dark-theme';
-        document.documentElement.className = theme;
+    <script src="assets/js/shortcuts.js"></script>
+    <script src="assets/js/utils.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/engine.js" defer></script>
 
-        async function loadArticle() {
-            const params = new URLSearchParams(window.location.search);
-            let articlePath = params.get('article');
-
-            // Если в URL пусто, пытаемся открыть манифест
-            if (!articlePath) {
-                articlePath = 'docs/architecture-approach';
-            }
-
-            // Добавляем .md если пользователь забыл его в ссылке
-            const fullPath = articlePath.endsWith('.md') ? articlePath : `${articlePath}.md`;
-
-            const contentDiv = document.getElementById('content');
-
-            try {
-                // Пытаемся загрузить файл
-                const response = await fetch(fullPath);
-
-                if (!response.ok) {
-                    throw new Error(`File not found: ${fullPath} (Status: ${response.status})`);
-                }
-
-                let markdown = await response.text();
-
-                // Очистка от Frontmatter (метаданных между ---)
-                markdown = markdown.replace(/^---[\s\S]*?---/, '');
-
-                // Рендерим и вставляем
-                contentDiv.innerHTML = marked.parse(markdown);
-
-                // После рендера обновляем заголовок страницы
-                const cleanName = articlePath.split('/').pop().replace(/-/g, ' ');
-                document.title = `Handbook | ${cleanName.charAt(0).toUpperCase() + cleanName.slice(1)}`;
-
-            } catch (err) {
-                console.error('Loader Error:', err);
-                contentDiv.innerHTML = `
-                    <section class="card">
-                        <h1>404: Knowledge Not Found</h1>
-                        <p>Не удалось найти файл по пути: <code class="cmd">${fullPath}</code></p>
-                        <p style="margin-top: 20px;">
-                            <a href="index.html" style="color: var(--accent);">← Вернуться на главную</a>
-                        </p>
-                        <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
-                        <small style="color: var(--text-secondary);">
-                            Если вы открываете файл просто из папки (file://), браузер может блокировать загрузку.
-                            Используйте <strong>Live Server</strong> или <strong>python -m http.server</strong>.
-                        </small>
-                    </section>
-                `;
-            }
-        }
-
-        window.addEventListener('DOMContentLoaded', loadArticle);
-    </script>
 </head>
 <body>
 
     <header>
         <div class="logo">
-            <a href="index.html" style="text-decoration: none; color: inherit;">ECO-HYBRID-LAB / HANDBOOK</a>
+            <a href="index.html" style="text-decoration: none; color: inherit;">ECO-HYBRID-LAB</a>
         </div>
         <button class="theme-toggle" onclick="toggleTheme()">🌓 Switch Theme</button>
     </header>
 
     <main>
         <article id="content" class="markdown-body">
-            <p>Загрузка знаний из репозитория...</p>
+            <p>Syncing with database...</p>
         </article>
     </main>
 
     <footer>
-        <p>© 2026 Eco-Hybrid-Lab | <a href="https://github.com/mike-novozhenov" target="_blank">GitHub</a></p>
+        <p>© 2026 Eco-Hybrid-Lab | <a href="https://github.com/testme-io" target="_blank">GitHub</a></p>
     </footer>
 
-    <script src="assets/js/script.js" defer></script>
-</body>
+    </body>
 </html>

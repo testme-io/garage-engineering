@@ -1,4 +1,4 @@
-# Python
+# === Python & Environment ===
 .venv/
 __pycache__/
 *.py[cod]
@@ -6,20 +6,32 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 
-# IDE & Editor
+# === IDE & Editors ===
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# OS
+# === System Files ===
 .DS_Store
 Thumbs.db
 
-# Project Specific
-cyrillic_results.log
+# === Build & Automation Outputs ===
+scripts/User.xml
+scripts/settings.zip
+dist/
+build/
 assets/templates/
 
-utils/
+# === Audit & Temporary Logs ===
+find_cyrillic.py
+cyrillic_results.log
+cyrillic_report.txt
+*.log
+npm-debug.log*
 
+# === Personal Notes & Sandbox ===
 insights/
+notes/
+temp_*.md
+todo.md

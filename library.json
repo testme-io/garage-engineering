@@ -1,0 +1,79 @@
+{
+  "shortcodes": [
+    {
+      "prefix": "my-card",
+      "tag": "container",
+      "template": "<my-card>\n\n$SELECTION$$END$\n\n</my-card>"
+    },
+    {
+      "prefix": "my-features",
+      "tag": "list",
+      "template": "<my-features>\n\n$SELECTION$* $END$\n\n</my-features>"
+    },
+    {
+      "prefix": "my-spoiler",
+      "tag": "container",
+      "template": "<my-spoiler title=\"${TITLE}\">\n\n$SELECTION$$END$\n\n</my-spoiler>"
+    },
+    {
+      "prefix": "my-before",
+      "tag": "example",
+      "template": "<my-before text=\"${TEXT}\">\n\n```python\n$SELECTION$$END$\n```\n\n</my-before>"
+    },
+    {
+      "prefix": "my-after",
+      "tag": "example",
+      "template": "<my-after text=\"${TEXT}\">\n\n```python\n$SELECTION$$END$\n```\n\n</my-after>"
+    },
+    {
+      "prefix": "my-success",
+      "tag": "alert",
+      "template": "<my-success>\n$SELECTION$$END$\n</my-success>"
+    },
+    {
+      "prefix": "my-warning",
+      "tag": "alert",
+      "template": "<my-warning>\n$SELECTION$$END$\n</my-warning>"
+    },
+    {
+      "prefix": "my-info",
+      "tag": "alert",
+      "template": "<my-info>\n$SELECTION$$END$\n</my-info>"
+    },
+    {
+      "prefix": "my-error",
+      "tag": "alert",
+      "template": "<my-error>\n$SELECTION$$END$\n</my-error>"
+    },
+    {
+      "prefix": "my-file",
+      "tag": "inline",
+      "template": "<my-file>$SELECTION$$END$</my-file>"
+    },
+    {
+      "prefix": "my-kbd",
+      "tag": "inline",
+      "template": "<my-kbd>$SELECTION$$END$</my-kbd>"
+    },
+    {
+      "prefix": "my-h1",
+      "tag": "heading",
+      "template": "<my-h1>\n$SELECTION$$END$\n</my-h1>"
+    },
+    {
+      "prefix": "my-h2",
+      "tag": "heading",
+      "template": "<my-h2>\n$SELECTION$$END$\n</my-h2>"
+    },
+    {
+      "prefix": "my-cmd",
+      "tag": "inline",
+      "template": "<span class=\"cmd\">$SELECTION$$END$</span>"
+    },
+    {
+      "prefix": "comment",
+      "tag": "structure",
+      "template": "<div style=\"display:none\">\n\n## $END$\n\n</div>"
+    }
+  ]
+}

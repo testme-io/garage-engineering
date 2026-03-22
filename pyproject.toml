@@ -10,6 +10,8 @@ dependencies = [
     "duckdb>=1.1.0",
     "pandas>=2.2.0",
     "plotly>=5.20.0",
+    "cssbeautifier>=1.15.4",
+    "jsbeautifier>=1.15.4",
 ]
 
 [dependency-groups]
@@ -28,3 +30,12 @@ ignore = ["F401"]
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "space"
+
+[tool.poe.tasks]
+fmt    = "python format.py"
+server = "python -m http.server 8000"
+save   = "git add . && git commit -m 'update' && git push"
+
+#function server { uv run poe server }
+#function fmt { uv run poe fmt }
+#function save { uv run poe save }
