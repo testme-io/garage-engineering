@@ -33,7 +33,3 @@ indent-style = "space"
 fmt    = "python format.py"
 server = "python -m http.server 8000"
 save   = "git add . && git commit -m 'update' && git push"
-
-#function server { uv run poe server }
-#function fmt { uv run poe fmt }
-#function save { uv run poe save }
