@@ -1,8 +1,3 @@
-[project]
-name = "eco-hybrid-lab"
-version = "0.1.0"
-description = "Ephemeral Observability Lab for fast RCA"
-readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "faker>=40.8.0",
@@ -12,11 +7,14 @@ dependencies = [
     "plotly>=5.20.0",
     "cssbeautifier>=1.15.4",
     "jsbeautifier>=1.15.4",
+    "poethepoet>=0.32.0",
 ]
 
 [dependency-groups]
 dev = [
+    "poethepoet>=0.42.1",
     "pytest>=8.0.0",
+    "ruff>=0.9.0",
 ]
 
 [tool.ruff]

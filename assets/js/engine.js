@@ -1,7 +1,8 @@
 async function initApp() {
     const container = document.getElementById('content');
     const urlParams = new URLSearchParams(window.location.search);
-    const articlePath = urlParams.get('article') || 'articles/little-big-things/01-ruff.md';
+    const articleParam = urlParams.get('article');
+    const articlePath = articleParam ? `articles/${articleParam}.md` : 'articles/index.md';
 
     try {
         const response = await fetch(articlePath);
@@ -11,11 +12,11 @@ async function initApp() {
         // 1. Dynamic Tab Title: Extract the first line starting with "## "
         const headerMatch = mdText.match(/^##\s+(.*)$/m);
         if (headerMatch && headerMatch[1]) {
-            document.title = `EH | ${headerMatch[1].trim()}`;
+            document.title = `TM | ${headerMatch[1].trim()}`;
         } else {
             // Fallback to formatted filename if ## header is missing
             const fileName = articlePath.split('/').pop().replace('.md', '').replace(/-/g, ' ');
-            document.title = `EH | ${fileName.toUpperCase()}`;
+            document.title = `TM | ${fileName.toUpperCase()}`;
         }
 
         // 2. Render Markdown content
@@ -27,7 +28,7 @@ async function initApp() {
         }
     } catch (err) {
         container.innerHTML = `<div class="item-danger">Error: ${err.message}</div>`;
-        document.title = 'EH | Error';
+        document.title = 'TM | Error';
     }
 }
 

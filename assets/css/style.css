@@ -103,11 +103,16 @@ h3 {
 }
 
 .logo {
-    font-weight: 800;
+    font-weight: 600;
     color: var(--accent);
     letter-spacing: 0.5px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
+    font-size: 1.1rem;
+    text-transform: none;
+}
+
+.divider {
+    margin: 0 7px;
+    opacity: 0.5;
 }
 
 .post-category {
@@ -229,6 +234,7 @@ pre[class*="language-"] code {
     color: var(--mint);
     background: rgba(133, 232, 157, 0.1);
     border: 1px solid rgba(133, 232, 157, 0.2);
+    text-shadow: 0 0 5px rgba(133, 232, 157, 0.5);
 }
 
 .cmd:hover {
