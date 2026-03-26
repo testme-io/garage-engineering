@@ -305,6 +305,7 @@ In the next posts I’ll show:
 * how to isolate slow endpoints in seconds 
 
 * how to build a performance diff workflow
+* 
 &nbsp;
 
 ---
@@ -313,6 +314,6 @@ In the next posts I’ll show:
 
 Theory is boring without practice
 
-**I’ll share the dataset + the exact tools (uv, DuckDB, Marimo) to reproduce this analysis locally in the next post**
+**I’ll share the dataset + the exact tools (`uv`, `DuckDB`, `Marimo`) to reproduce this analysis locally in the next post**
 
 Stay tuned — we are just getting started in the `Garage`
