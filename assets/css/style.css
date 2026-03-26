@@ -151,12 +151,10 @@ h3 {
     overflow: hidden;
 }
 
-/* Убираем лишний отступ у первого элемента в карточке (обычно это H2) */
 .card>*:first-child {
     margin-top: 0 !important;
 }
 
-/* Делаем списки внутри карточки чуть компактнее */
 .card ul {
     margin-bottom: 0;
 }
@@ -174,7 +172,7 @@ h3 {
 /* ==========================================================================
    5. CODE & TERMINAL COMMANDS
    ========================================================================== */
-/* Базовый контейнер для Prism и обычных pre */
+
 pre,
 pre[class*="language-"] {
     background: #0d1117 !important;
@@ -190,7 +188,7 @@ pre[class*="language-"] {
     margin: 1.618rem 0;
 }
 
-/* Сброс стилей для кода внутри pre, чтобы Prism работал корректно */
+
 pre code,
 pre[class*="language-"] code {
     background: transparent !important;
@@ -199,7 +197,7 @@ pre[class*="language-"] code {
     font-size: inherit !important;
 }
 
-/* Кнопка копирования */
+
 .copy-btn {
     position: absolute;
     right: 10px;
@@ -214,7 +212,7 @@ pre[class*="language-"] code {
     z-index: 10;
 }
 
-/* Командная строка (инлайн) */
+
 .cmd {
     position: relative;
     font-family: 'Fira Code', monospace;
@@ -269,7 +267,7 @@ pre[class*="language-"] code {
     }
 }
 
-/* Инлайн-код в тексте (Розовый) */
+
 code:not(.cmd):not(pre code):not([class*="language-"]) {
     font-family: 'Fira Code', monospace;
     font-size: 0.9em;
@@ -287,7 +285,7 @@ code:not(.cmd):not(pre code):not([class*="language-"]) {
 }
 */
 
-/* Подсветка комментариев Prism через твою переменную */
+
 .token.comment,
 .token.prolog,
 .token.doctype,
@@ -414,7 +412,7 @@ code:not(.cmd):not(pre code):not([class*="language-"]) {
    8. COMPARISON GRIDS (Fixed & Refined)
    ========================================================================== */
 
-/* Контейнер-обертка для пары: заголовок + код */
+
 .example-block {
     display: flex;
     flex-direction: column;
@@ -422,7 +420,7 @@ code:not(.cmd):not(pre code):not([class*="language-"]) {
     /* Увеличенный отступ для визуального разделения блоков */
 }
 
-/* Заголовок блока (BEFORE/AFTER) */
+
 .example-label {
     display: inline-block;
     padding: 6px 14px;
@@ -445,7 +443,7 @@ code:not(.cmd):not(pre code):not([class*="language-"]) {
     /* Чтобы заголовок был чуть выше основной рамки кода */
 }
 
-/* Цвета текста заголовков */
+
 .label-before {
     color: #ff4d4d;
 }
@@ -501,10 +499,7 @@ pre .token.comment {
    ========================================================================== */
 
 /* Информационные блоки */
-.item-success,
-.item-warning,
-.item-info,
-.item-danger {
+.item-success, .item-warning, .item-info, .item-danger {
     padding: 16px;
     margin: 1.618rem 0;
     border-left: 4px solid;
@@ -512,25 +507,10 @@ pre .token.comment {
     background: var(--card-bg);
 }
 
-.item-success {
-    border-left-color: #2ecc71 !important;
-    color: #2ecc71;
-}
-
-.item-warning {
-    border-left-color: #f1c40f !important;
-    color: #f1c40f;
-}
-
-.item-info {
-    border-left-color: #3498db !important;
-    color: #3498db;
-}
-
-.item-danger {
-    border-left-color: #e74c3c !important;
-    color: #e74c3c;
-}
+.item-success { border-left-color: #2ecc71 !important; color: #2ecc71; }
+.item-warning { border-left-color: #f1c40f !important; color: #f1c40f; }
+.item-info    { border-left-color: #3498db !important; color: #3498db; }
+.item-danger  { border-left-color: #e74c3c !important; color: #e74c3c; }
 
 /* Путь к файлу (Тег file) */
 .file-path {
@@ -543,27 +523,79 @@ pre .token.comment {
     border: 1px solid rgba(214, 51, 132, 0.2);
 }
 
-/* Клавиши клавиатуры (Тег kbd) */
+/* Клавиши клавиатуры & Теги (kbd-shell) */
 .kbd-shell {
-    background: #fcfcfc;
-    border: 1px solid #adb5bd;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.9em !important;
+    font-weight: 500;
+    padding: 1px 6px;
     border-radius: 4px;
-    box-shadow: 0 2px 0 #adb5bd;
-    color: #212529;
     display: inline-block;
-    font-family: inherit;
-    font-size: 0.8em;
-    font-weight: 700;
-    line-height: 1;
-    padding: 3px 6px;
-    white-space: nowrap;
+    margin-left: 8px;
+    text-transform: none !important; /* No caps */
+    vertical-align: baseline;
+    line-height: 1.618;
+
+    /* Dark Theme Default (Gray) */
+    background: rgba(48, 54, 61, 0.5) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-secondary) !important;
+    box-shadow: none !important; /* Removed old button shadow */
 }
 
-[data-theme="dark"] .kbd-shell {
-    background: #343a40;
-    border-color: #495057;
-    box-shadow: 0 2px 0 #212529;
-    color: #dee2e6;
+/* Light Theme Overrides (Pink) */
+.light-theme .kbd-shell {
+    background: rgba(214, 51, 132, 0.1) !important;
+    color: var(--accent) !important;
+    border-color: rgba(214, 51, 132, 0.2) !important;
+}
+
+/* Blockquote & Subtitle Styles */
+.markdown-body blockquote, article blockquote {
+    font-size: 1.272rem !important;
+    padding-left: 20px !important;
+    border-left: 5px solid var(--accent) !important;
+    margin: 1.618rem 0 2.618rem 0 !important;
+    opacity: 0.9 !important;
+    color: var(--text-primary) !important;
+}
+
+.label-subtitle {
+    text-transform: none !important;
+    font-weight: 400;
+    font-size: 0.95em;
+    opacity: 0.9;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/* ==========================================================================
+   10. LINKS & STATUS
+   ========================================================================== */
+
+/* Links in feature list: remove blue/purple colors */
+.markdown-body .feature-list ul li a,
+.markdown-body .feature-list ul li a:link,
+.markdown-body .feature-list ul li a:visited {
+    color: var(--text-primary) !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    background: transparent !important;
+    border: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.markdown-body .feature-list ul li a:hover {
+    color: var(--accent) !important;
+}
+
+/* Status: last kbd-shell always Mint */
+.feature-list li .kbd-shell:last-of-type {
+    background: var(--mint) !important;
+    color: #0d1117 !important;
+    border: none !important;
+    font-weight: 700 !important;
+    margin-left: 10px;
 }
 
 .markdown-body blockquote,
