@@ -39,13 +39,17 @@
    ========================================================================== */
 body {
     font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+
     background-color: var(--bg);
     color: var(--text-primary);
+
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px 40px 20px;
+
     line-height: 1.618;
-    /* Golden ratio line height */
     font-size: 16px;
 }
 
@@ -498,7 +502,6 @@ pre .token.comment {
    9. NEW COMPONENTS & SHORTCODES
    ========================================================================== */
 
-/* Информационные блоки */
 .item-success, .item-warning, .item-info, .item-danger {
     padding: 16px;
     margin: 1.618rem 0;
@@ -512,7 +515,6 @@ pre .token.comment {
 .item-info    { border-left-color: #3498db !important; color: #3498db; }
 .item-danger  { border-left-color: #e74c3c !important; color: #e74c3c; }
 
-/* Путь к файлу (Тег file) */
 .file-path {
     font-family: 'Fira Code', monospace;
     background: rgba(214, 51, 132, 0.1);
@@ -523,7 +525,6 @@ pre .token.comment {
     border: 1px solid rgba(214, 51, 132, 0.2);
 }
 
-/* Клавиши клавиатуры & Теги (kbd-shell) */
 .kbd-shell {
     font-family: 'Inter', sans-serif !important;
     font-size: 0.9em !important;
@@ -598,21 +599,35 @@ pre .token.comment {
     margin-left: 10px;
 }
 
-.markdown-body blockquote,
-article blockquote {
-    font-size: 1.272rem !important;
-    padding-left: 20px !important;
-    border-left: 5px solid var(--accent) !important;
-    margin: 1.618rem 0 2.618rem 0 !important;
-    opacity: 0.9 !important;
-    color: var(--text-primary) !important;
+/* ==========================================================================
+   11. CONTENT SPACING FIXES
+   ========================================================================== */
+
+/* Схлопываем параграфы, которые используются как отступы (&nbsp; или пустые) */
+.markdown-body p:empty,
+.markdown-body p:has(br:only-child),
+.markdown-body p:last-child:empty {
+    margin: 0 !important;
+    height: 10px !important; /* Вот она, высота твоей "пустой" строки */
+    line-height: 0 !important;
+    display: block !important;
 }
 
-.label-subtitle {
-    text-transform: none !important; /* Принудительно отключаем капс */
-    font-weight: 400;                /* Убираем жирность */
-    font-size: 0.95em;               /* Чуть меньше основного текста */
-    opacity: 0.9;                    /* Слегка приглушаем цвет */
-    display: inline-block;
-    margin-left: 5px;
+/* Если ты используешь &nbsp;, парсер может создавать такой параграф */
+.markdown-body p {
+    /* Чуть уменьшим стандартный отступ между обычными абзацами */
+    margin-bottom: 0.8rem !important;
+}
+
+.spacer {
+    height: 12px; /* Управляй высотой здесь */
+    display: block;
+}
+
+.markdown-body hr {
+    height: 1px;                /* Минимальная толщина */
+    border: none;               /* Убираем стандартную рамку */
+    background-color: var(--accent); /* Твой розовый цвет #ff007f */
+    margin: 2rem 0;             /* Отступы, чтобы текст не прилипал */
+    opacity: 0.3;               /* Делаем её полупрозрачной, чтобы не "резала" глаз */
 }

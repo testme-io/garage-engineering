@@ -1,3 +1,14 @@
+<style>
+  .markdown-body {
+    line-height: 1.4 !important; /* Уплотняем текст самой статьи */
+  }
+  
+  .markdown-body p {
+    margin-bottom: 0.7rem !important; /* Уменьшаем стандартный отступ между абзацами */
+  }
+
+</style>
+
 # The Green Dashboard Paradox: Why Your Metrics Look Fine While Users Suffer
 
 > 
@@ -11,7 +22,7 @@ This is not about replacing Grafana or Kibana. They are great for monitoring.
 
 But sometimes… they are the wrong tools for debugging.
 
-&nbsp;
+<div class="spacer"></div>
 
 ---
 
@@ -19,7 +30,7 @@ But sometimes… they are the wrong tools for debugging.
 
 In one of the SaaS project I worked on, we hit a strange situation.
 
-&nbsp;
+<div class="spacer"></div>
 
 Everything looked perfectly healthy on the dashboard:
 
@@ -31,7 +42,7 @@ Everything looked perfectly healthy on the dashboard:
 
 But at the same time… support was exploding.
 
-&nbsp;
+<div class="spacer"></div>
 
 Around 2% of users reported that the app felt “completely broken”.
 
@@ -39,7 +50,7 @@ It wasn’t a global slowdown — it was happening only on specific user flows i
 
 A user would apply a complex filter or update a task status… and nothing happened for ~3 seconds.
 
-&nbsp;
+<div class="spacer"></div>
 
 No error.
 
@@ -53,7 +64,7 @@ From the user’s perspective, it looked like nothing happened.
 
 👉 No feedback = no trust.
 
-&nbsp;
+<div class="spacer"></div>
 
 So what did users do?
 
@@ -65,7 +76,7 @@ And again.
 
 And every click made it worse.
 
-&nbsp;
+<div class="spacer"></div>
 
 This is where things got messy.
 
@@ -77,8 +88,7 @@ Some responses arrived late and overwrote newer state.
 
 From the user’s perspective, the system wasn’t just “slow” — it was lying to them.
 
-&nbsp;
-
+<div class="spacer"></div>
 
 Support was flooded with:
 
@@ -90,7 +100,7 @@ Support was flooded with:
 
 Meanwhile… the dashboard was calmly showing a <span class="cmd">perfect green line</span>.
 
-&nbsp;
+<div class="spacer"></div>
 
 ---
 
@@ -102,7 +112,7 @@ Imagine just 100 requests:
 
 * 2 slow requests (3 seconds) — applying a complex filter or updating a task status
 
-&nbsp;
+<div class="spacer"></div>
 
 The average?
 
@@ -113,7 +123,7 @@ On a dashboard, an +8ms shift looks like normal jitter.
 No alerts. 
 Everything stays beautifully green.
 
-&nbsp;
+<div class="spacer"></div>
 
 ---
 
@@ -127,7 +137,7 @@ Because nothing was technically “wrong” at system level.
 
 * What we had was only ~5%
 
-&nbsp;
+<div class="spacer"></div>
 
 And more importantly:
 
@@ -137,7 +147,7 @@ Fast endpoints diluted the slow ones.
 
 So the system looked stable… while one critical path was burning.
 
-&nbsp;
+<div class="spacer"></div>
 
 ---
 
@@ -155,7 +165,7 @@ And not just any users.
 
 These were users hitting high-value flows (complex reports, bulk updates, status transitions).
 
-&nbsp;
+<div class="spacer"></div>
 
 ---
 
@@ -173,7 +183,7 @@ What was really happening?
 
 After digging deeper, we realized two things became obvious:
 
-&nbsp;
+<div class="spacer"></div>
 
 `1. The Aggregation Trap`
 
@@ -197,7 +207,7 @@ In the global average…
 
 👉 the pain of /tasks/filter was diluted almost to zero
 
-&nbsp;
+<div class="spacer"></div>
 
 `2. The Infrastructure Tax`
 
@@ -222,7 +232,7 @@ Every hypothesis → new query → new wait (on shared infrastructure, high-card
 👉 That’s how RCA turns into a ~4-hour process
 
 
-&nbsp;
+<div class="spacer"></div>
 
 ---
 ### The goal
@@ -241,7 +251,7 @@ Ideally:
 
 👉 any engineer can analyze millions of records locally in seconds
 
-&nbsp;
+<div class="spacer"></div>
 
 ---
 
@@ -251,7 +261,7 @@ Instead of bringing engineers to the data…
 
 👉 bring the data to the engineer
 
-&nbsp;
+<div class="spacer"></div>
 
 So I built a small portable analytics stack:
 
@@ -261,7 +271,7 @@ So I built a small portable analytics stack:
 
 `Marimo` — reactive interface (like Excel + Python)
 
-&nbsp;
+<div class="spacer"></div>
 
 ---
 
@@ -278,7 +288,7 @@ Once you have a focused dataset:
 * Infrastructure: zero changes, runs locally
 
 
-&nbsp;
+<div class="spacer"></div>
 
 ---
 
@@ -294,7 +304,7 @@ And most of those questions sound like:
 
 This is what I call `Ephemeral Observability`
 
-&nbsp;
+<div class="spacer"></div>
 
 ---
 
@@ -305,8 +315,8 @@ In the next posts I’ll show:
 * how to isolate slow endpoints in seconds 
 
 * how to build a performance diff workflow
-* 
-&nbsp;
+
+<div class="spacer"></div>
 
 ---
 
