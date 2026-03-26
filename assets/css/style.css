@@ -603,31 +603,31 @@ pre .token.comment {
    11. CONTENT SPACING FIXES
    ========================================================================== */
 
-/* Схлопываем параграфы, которые используются как отступы (&nbsp; или пустые) */
+
 .markdown-body p:empty,
 .markdown-body p:has(br:only-child),
 .markdown-body p:last-child:empty {
     margin: 0 !important;
-    height: 10px !important; /* Вот она, высота твоей "пустой" строки */
+    height: 10px !important;
     line-height: 0 !important;
     display: block !important;
 }
 
-/* Если ты используешь &nbsp;, парсер может создавать такой параграф */
+
 .markdown-body p {
-    /* Чуть уменьшим стандартный отступ между обычными абзацами */
+
     margin-bottom: 0.8rem !important;
 }
 
 .spacer {
-    height: 12px; /* Управляй высотой здесь */
+    height: 12px;
     display: block;
 }
 
 .markdown-body hr {
-    height: 1px;                /* Минимальная толщина */
-    border: none;               /* Убираем стандартную рамку */
-    background-color: var(--accent); /* Твой розовый цвет #ff007f */
-    margin: 2rem 0;             /* Отступы, чтобы текст не прилипал */
-    opacity: 0.3;               /* Делаем её полупрозрачной, чтобы не "резала" глаз */
+    height: 1px;
+    border: none;
+    background-color: var(--accent);
+    margin: 2rem 0;
+    opacity: 0.3;
 }
