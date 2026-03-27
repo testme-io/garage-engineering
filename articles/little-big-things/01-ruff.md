@@ -3,11 +3,13 @@
 > One lightning-fast tool to replace your entire linting stack and keep your Python code clean
 
 
-<my-card text="1">
+<my-card>
+
+
 
 ## 01. Ruff — The Lightning-Fast Linter (Python ONLY)
 
-Let’s start with the `linter`, your code’s first line of defense. Think of it as an automatic auditor that scans your text and catches issues before you even hit  <my-kbd>Run</my-kbd>
+Let’s start with the `linter`, code’s first line of defense. Think of it as an automatic auditor that scans your text and catches issues before you even hit  <my-kbd>Run</my-kbd>
 
 
 <div class="list-title">📁 Key Capabilities:</div>
@@ -22,9 +24,19 @@ Let’s start with the `linter`, your code’s first line of defense. Think of i
 
 
 
+
+
+<my-card-pink>
+
+
 💊 `Little:` Zero Friction. Installation takes seconds and requires no configuration to start catching bugs immediately. Auto-fix most issues instantly with one command: <span class="cmd">ruff check --fix</span>
 
-🦾 `Big:` Complete Control. One tool replaces a whole stack (Flake8, isort, Black, pyupgrade, and pydocstyle), consolidating your entire workflow into a single, clean config. Fewer dependencies mean a cleaner project and zero maintenance headaches.
+🦾 `Big:` Complete Control. One tool replaces a whole stack (Flake8, isort, Black, pyupgrade, and pydocstyle), consolidating your entire workflow into a single, clean config. Fewer dependencies mean a cleaner project and zero maintenance headaches
+
+</my-card-pink>
+
+
+
 
 🛡️ `Safe & Reliable:` Ruff distinguishes between "safe" fixes (like removing extra whitespace) and "dangerous" ones that might affect logic. By default, auto-fix only applies guaranteed safe changes. Backed by Astral, it is built for enterprise-grade stability.
 
@@ -33,8 +45,11 @@ Let’s start with the `linter`, your code’s first line of defense. Think of i
 ⚙️ `Zero Config:` It works out of the box with sensible defaults. No complex setup required.
 
 
+</my-card>
 
-🔄 `Example:` Refactoring Configuration. Consolidating scattered flags into a structured, modern format.
+<my-card>
+
+### `Example:` refactoring configuration, consolidating scattered flags into a structured, modern format
 
 <my-before text="Messy imports & PEP8 violations">
 
@@ -165,5 +180,19 @@ Ruff provides different modes depending on whether you want to just peek at the 
 </my-features>
 
 </my-spoiler>
+
+</my-card>
+
+<my-card>
+
+<div class="list-title">🔗 Links & Resources:</div>
+
+<my-features>
+
+* **Official Website:** [astral.sh/ruff](https://astral.sh/ruff) — documentation and main features
+* **GitHub Repository:** [astral-sh/ruff](https://github.com/astral-sh/ruff) — source code and issue tracker
+* **Discord Community:** [Astral Discord](https://discord.gg/astral-sh) — get help and discuss updates
+
+</my-features>
 
 </my-card>

@@ -1,7 +1,11 @@
 const shortcuts = {
     // 1. Card container
-    'my-card': (content) => `
-        <section class="card">${content}</section>`,
+
+    // 1. Card container - убираем лишний <section>, оставляем только контент
+    'my-card': (content) => `${content}`,
+
+    'my-card-pink': (content) => `${content}`,
+    // ... остальные шорткаты
 
     // 2. Feature list with mint accents
     'my-features': (content) => `

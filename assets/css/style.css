@@ -145,21 +145,66 @@ h3 {
 /* ==========================================================================
    4. UI COMPONENTS
    ========================================================================== */
-.card {
+
+
+.card,
+my-card,
+my-card-pink {
+    display: block;
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 24px;
     margin-bottom: 24px;
-    /* Чтобы фон не "протекал" под скругления */
     overflow: hidden;
+    position: relative;
 }
 
-.card>*:first-child {
+my-card-pink,
+.card.card-highlight {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.1) !important;
+}
+
+my-card .card,
+my-card-pink .card,
+.card .card,
+my-card my-card,
+my-card-pink my-card-pink {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.card > *:first-child,
+my-card > *:first-child,
+my-card-pink > *:first-child {
     margin-top: 0 !important;
 }
 
-.card ul {
+.card > *:last-child,
+my-card > *:last-child,
+my-card-pink > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+.card p:last-child,
+my-card p:last-child,
+my-card-pink p:last-child {
+    margin-bottom: 0 !important;
+}
+
+.card p:empty,
+my-card p:empty,
+my-card-pink p:empty {
+    display: none !important;
+}
+
+.card ul,
+my-card ul,
+my-card-pink ul {
     margin-bottom: 0;
 }
 
@@ -171,6 +216,12 @@ h3 {
     border-radius: 6px;
     cursor: pointer;
     font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--border);
+    opacity: 0.8;
 }
 
 /* ==========================================================================
@@ -615,7 +666,6 @@ pre .token.comment {
 
 
 .markdown-body p {
-
     margin-bottom: 0.8rem !important;
 }
 
