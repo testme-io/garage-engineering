@@ -1,0 +1,58 @@
+{
+  "forgeme_version": "1.0.0",
+  "generated_at": "2026-04-19T11:42:00Z",
+
+  "scenario": "out_of_order",
+  "level": 1,
+  "level_name": "The Latecomer",
+
+  "seed": "forge-42a8c1",
+
+  "dataset": {
+    "total_events": 1000,
+    "output_format": "json",
+    "time_range_start": "2026-04-19T10:00:00Z",
+    "time_range_end":   "2026-04-19T10:05:00Z"
+  },
+
+  "injection": {
+    "anomaly_type": "timestamp_shuffle",
+    "affected_count": 87,
+    "affected_rate_pct": 8.7,
+    "delay_window_sec": { "min": 1, "max": 5 },
+    "distribution": "uniform",
+    "deterministic": true
+  },
+
+  "affected_events": [
+    { "event_id": "evt_0012", "original_position": 12,  "arrived_position": 47,  "injected_delay_sec": 3.2 },
+    { "event_id": "evt_0045", "original_position": 45,  "arrived_position": 91,  "injected_delay_sec": 4.7 },
+    { "event_id": "evt_0103", "original_position": 103, "arrived_position": 134, "injected_delay_sec": 1.9 },
+    { "event_id": "evt_0217", "original_position": 217, "arrived_position": 249, "injected_delay_sec": 2.6 },
+    { "event_id": "evt_0341", "original_position": 341, "arrived_position": 388, "injected_delay_sec": 4.1 },
+    "...+82 more"
+  ],
+
+  "what_to_check": [
+    {
+      "id": "check_count",
+      "assertion": "output_event_count == 1000",
+      "description": "No events were dropped"
+    },
+    {
+      "id": "check_order",
+      "assertion": "events sorted by event_time ASC in output",
+      "description": "System reordered events correctly"
+    },
+    {
+      "id": "check_buffer",
+      "assertion": "no events dropped within delay_window_sec [1, 5]",
+      "description": "Buffer held the full delay window"
+    }
+  ],
+
+  "replay": {
+    "command": "forgeme run --seed=forge-42a8c1 --level=1",
+    "note": "Same seed always produces identical dataset"
+  }
+}
