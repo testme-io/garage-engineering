@@ -1,15 +1,22 @@
-### Push to git ###
+## Push to git: ##
 ```
 doskey gp=git add . ^& git commit -m "update" ^& git push
 ```
 then enter gp
 
+```
+git add . && git commit -m "update" && git push
+```
 ---
-
+## RUN SEVER: ##
 ### Backend ###
 ```
 cd backend
 uv run uvicorn core.main:app --reload
+```
+Swagger
+```
+http://localhost:8000/docs
 ```
 
 ### Frontend ###
@@ -18,18 +25,19 @@ cd apps/hub
 npm run dev
 ```
 
-OR
-```
-npx turbo dev
-```
-```
-uv run uvicorn core.main:app --reload
-```
-
 ---
 
-run tests:
+## RUN TESTS: ##
+
+### ForgeMe ###
 ```
-uv run pytest -v
+cd "D:\My projects\StackMe\backend\services\forge_me"
+uv run pytest tests/ -v
+```
+
+## AnalyzeMe ##
+
+```
+
 ```
 
